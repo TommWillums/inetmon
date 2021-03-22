@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Timers;
@@ -9,14 +10,14 @@ namespace inetmon
     {
         const int PING_TIMEOUT = 3;
 
-        static int pingInterval  = 60;   // every minute
-        static int aliveInterval = 3600; // every hour
-        static string urlToMonitor = "www.google.com";
+        static int pingInterval;    // default every minute
+        static int aliveInterval;   // default every hour
+        static string urlToMonitor; // default www.google.com
+
+        static InputOptions options;    
 
         static Timer pingTimer;
         static Timer aliveTimer;
-
-        static InputOptions options;
 
         static void Main(string[] args)
         {
@@ -34,7 +35,7 @@ namespace inetmon
 
         private static void RunMonitor()
         {
-            string assemblyVersion = System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();
+            string assemblyVersion = "1.0.2.0";
 
             string msg = $"---- Internet Connection Monitor {assemblyVersion} ----";
             Console.WriteLine(msg);

@@ -62,7 +62,7 @@ namespace inetmon
                     }
                 }
             }
-            catch(IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException)
             {
                 ValidOptions = false;
             }
