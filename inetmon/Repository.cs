@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using NetMon.Common;
 
 namespace inetmon
 {
-    enum LogType { Header, Started, Alive, Ok, Error }
-
     public class Repository : IRepository
     {
         List<MessageLog> _log;
