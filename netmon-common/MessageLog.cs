@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace inetmon
+namespace NetMon.Common
 {
     public class MessageLog
     {

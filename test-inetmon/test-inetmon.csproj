@@ -23,5 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\inetmon\inetmon.csproj" />
+    <ProjectReference Include="..\netmon-common\NetMon.Common.csproj" />
   </ItemGroup>
 </Project>

@@ -12,4 +12,7 @@
   <ItemGroup>
     <Folder Include="DAL\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\netmon-common\NetMon.Common.csproj" />
+  </ItemGroup>
 </Project>

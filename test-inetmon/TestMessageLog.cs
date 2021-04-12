@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Xunit;
 using inetmon;
+using NetMon.Common;
+using inetmon.DAL;
 
 namespace test_inetmon
 {
@@ -24,7 +26,8 @@ namespace test_inetmon
         public void TestLogAndRepository()
         {
             var list = InitLogList();
-            var repository = new Repository(list);
+            var repository = new Repository();
+            repository.Fill(list);
             var result = repository.GetLog(DateTime.MinValue);
             Assert.Equal(7, list.Count);
             Assert.Equal(7, result.Count);
@@ -34,7 +37,8 @@ namespace test_inetmon
         public void TestErrorLogFromLastMonth()
         {
             var list = InitLogList();
-            var repository = new Repository(list);
+            var repository = new Repository();
+            repository.Fill(list);
             var result = repository.GetErrorLog(DateTime.Now.AddMonths(-1));
             Assert.Equal(2, result.Count);
         }
@@ -44,8 +48,9 @@ namespace test_inetmon
         [Fact]
         public void TestReadingLogfile()
         {
+            var list = new MessageLogHelper().GetMessagelogFromFile(LOGFILE);
             var repository = new Repository();
-            repository.BuildMessagelogFromFile(LOGFILE);
+            repository.Fill(list);
             var result = repository.GetLog(DateTime.MinValue);
             Assert.Equal(18, result.Count);
         }
@@ -53,8 +58,9 @@ namespace test_inetmon
         [Fact]
         public void TestReadingInfologFromFile()
         {
+            var list = new MessageLogHelper().GetMessagelogFromFile(LOGFILE);
             var repository = new Repository();
-            repository.BuildMessagelogFromFile(LOGFILE);
+            repository.Fill(list);
             var result = repository.GetInfoLog(DateTime.MinValue);
             Assert.Equal(5, result.Count);
         }
@@ -62,8 +68,9 @@ namespace test_inetmon
         [Fact]
         public void TestReadingErrorlogFromFile()
         {
+            var list = new MessageLogHelper().GetMessagelogFromFile(LOGFILE);
             var repository = new Repository();
-            repository.BuildMessagelogFromFile(LOGFILE);
+            repository.Fill(list);
             var result = repository.GetErrorLog(DateTime.MinValue);
             Assert.Equal(4, result.Count);
         }
