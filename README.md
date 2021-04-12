@@ -1,2 +1,2 @@
 # inetmon
-Test project for C#
+Test project for C# and Blazor
