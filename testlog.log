@@ -1,0 +1,18 @@
+---- Internet Connection Monitor 1.0.2.0 ----
+Started: 22.03.2021 15:24:52
+Ping    : 1 seconds
+Alive   : 1 minutes
+Monitor : www.google.com
+22.03.2021 15:24 - OK
+22.03.2021 15:24 - OK
+22.03.2021 15:24 - OK
+22.03.2021 15:24 - OK
+22.03.2021 15:25 - OK
+22.03.2021 15:25 - OK
+22.03.2021 15:25:02 ERROR: Ping www.google.com failed!
+22.03.2021 15:25:03 ERROR: Ping www.google.com failed!
+22.03.2021 15:25:08 ERROR: Ping www.google.com failed!
+22.03.2021 15:25:09 ERROR: Ping www.google.com failed!
+22.03.2021 15:25 - OK
+22.03.2021 15:25 - OK
+22.03.2021 15:25 - OK
